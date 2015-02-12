@@ -55,3 +55,6 @@ target/
 
 # Mac artefacts
 .DS_Store
+
+# Ignore any real config files
+config.py

@@ -1,0 +1,10 @@
+
+SECRET_KEY = 'enter your secret key here'
+ 
+MAIL_SERVER = "<enter mail server host here>" # smtp.gmail.com
+MAIL_PORT = <enter port here> # 465
+MAIL_USE_SSL = True
+MAIL_USERNAME = '<mail server user name>'
+MAIL_PASSWORD = '<mail server password>'
+
+SQLALCHEMY_DATABASE_URI = "mysql://<user>:<password>@<host>/<database>"
