@@ -2,7 +2,7 @@ from intro_to_flask import app
 from flask import render_template, request, flash, session, url_for, redirect
 from forms import ContactForm, SignupForm, SigninForm
 from flask.ext.mail import Message, Mail
-from models import db, User
+from models import db, User, Vehicle, Mileage
 
 mail = Mail()
 
@@ -29,6 +29,20 @@ def profile():
 		return redirect(url_for('signup'))
 	else:
 		return render_template('profile.html')	
+
+@app.route('/show_vehicles')
+def show_vehicles():
+	if 'email' not in session:
+		return redirect(url_for('signin'))
+
+	return render_template('show_vehicles.html', vehicles = Vehicle.query.order_by(Vehicle.vehicle_id.desc()).all())
+
+@app.route('/show_mileage')
+def show_mileage():
+	if 'email' not in session:
+		return redirect(url_for('signin'))
+
+	return render_template('show_mileage.html', mileage = Mileage.query.order_by(Mileage.journey_date.desc()).all())
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
