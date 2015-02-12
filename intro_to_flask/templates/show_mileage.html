@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div class="page-header">
+		<h1>Vehicles</h1>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Journey Date</th>
+				<th>Vehicle</th>
+				<th>Start KM</th>
+				<th>End KM</th>
+				<th>Journey</th>
+				<th>Client</th>
+				<th>Project</th>
+				<th>Purpose</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for miles in mileage %}
+			<tr>
+				<td>{{ miles.journey_date }}</td>
+				<td>{{ miles.vehicle.registration }}</td>
+				<td>{{ miles.start_km }}</td>
+				<td>{{ miles.end_km }}</td>
+				<td>{{ miles.journey }}</td>
+				<td>{{ miles.client_id }}</td>
+				<td>{{ miles.project_id }}</td>
+				<td>{{ miles.purpose }}</td>
+				{#
+				<td>{{ comment.pub_date.strftime("%H:%M:%S %d/%m/%Y") }}</td>
+				#}
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}
