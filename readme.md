@@ -74,7 +74,7 @@ Obviously create your own database and database user beforehand
 ```SQL
 $ mysql
 mysql> create database mydatabase
-mysql> create user 'newuser'@'localhost' identified by 'password'l
+mysql> create user 'newuser'@'localhost' identified by 'password';
 mysql> grant all privileges on *.* to 'newuser'@'localhost';
 
 ## Configuring your database connection
