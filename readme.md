@@ -58,7 +58,7 @@ Obviously create your own database and database user beforehand!
 
 ## Configuring your database connection
 
-Simple create a config.py file from config.py.example and update the parameters therein 
+Simple create a config.py file from config.py.example and update the parameters therein.
 
 ## Running this application
 
@@ -69,3 +69,9 @@ $ cd app
 $ python runserver.py
 ```
 
+## What's to do next
+
+1. Add CRUD to a page
+2. Look into using Datables for rich display of data
+3. Rename or clone the app and it a project management name
+4. Add a dashboard type main page.
