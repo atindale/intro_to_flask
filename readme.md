@@ -96,5 +96,5 @@ $ python runserver.py
 
 1. Add CRUD to a page
 2. Look into using Datables for rich display of data
-3. Rename or clone the app and it a project management name
+3. Rename or clone the app and give it a project management name
 4. Add a dashboard type main page.
