@@ -69,7 +69,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 ```
 
-Obviously create your own database and database user beforehand!
+Obviously create your owmsn database and database user beforehand
+
+```SQL
+$ mysql
+mysql> create database mydatabase
+mysql> create user 'newuser'@'localhost' identified by 'password'l
+mysql> grant all privileges on *.* to 'newuser'@'localhost';
 
 ## Configuring your database connection
 
@@ -80,6 +86,7 @@ Simple create a config.py file from config.py.example and update the parameters 
 You can run this application by:
 
 ```bash
+
 $ cd app
 $ python runserver.py
 ```
