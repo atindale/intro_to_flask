@@ -1,5 +1,5 @@
 from intro_to_flask import app
-from flask import render_template, request, flash, session, url_for, redirect
+from flask import render_template, request, flash, session, url_for, redirect,jsonify
 from forms import ContactForm, SignupForm, SigninForm
 from flask.ext.mail import Message, Mail
 from models import db, User, Vehicle, Mileage
@@ -17,6 +17,18 @@ def about():
 @app.route('/test')
 def test():
 	return render_template('test.html')
+
+@app.route('/link')
+def link():
+	return render_template('link.html')
+
+# Example Restful API route
+
+@app.route('/_add_numbers')
+def _add_numbers():
+	a = request.args.get('a', type=int)
+	b = request.args.get('b', type=int)
+	return jsonify(result=a + b)
 
 @app.route('/profile')
 def profile():
