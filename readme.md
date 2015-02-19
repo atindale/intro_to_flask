@@ -76,10 +76,11 @@ $ mysql
 mysql> create database mydatabase
 mysql> create user 'newuser'@'localhost' identified by 'password';
 mysql> grant all privileges on *.* to 'newuser'@'localhost';
+````
 
 ## Configuring your database connection
 
-Simple create a config.py file from config.py.example and update the parameters therein.
+Simply create a config.py file from config.py.example and update the parameters therein.
 
 ## Running this application
 
