@@ -69,7 +69,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 ```
 
-Obviously create your owmsn database and database user beforehand
+Obviously create your own database and database user beforehand
 
 ```SQL
 $ mysql
