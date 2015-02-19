@@ -2,11 +2,11 @@
 
 ## Overview
 
-This application started out from the Introduction to Flask tutorial on Tuts+. It has been developed further.
+This application started out from the Introduction to Flask tutorial on Tuts+. It has been developed further from trying out techiques and technologies. Eventually this will morph into a simple one-man-band projessional services business management application.
 
 ## Grabbing this application
 
-Just execute the follwing command to grab the application
+Just execute the follwing command to grab the application.
 
 ```bash
 $ git clone https://github.com/atindale/intro_to_flask.git
@@ -14,7 +14,15 @@ $ git clone https://github.com/atindale/intro_to_flask.git
 
 ## Creating the database
 
-This application currently need a vehicle, mileage and users table. Create them in MySQL with the following DDL 
+This application currently needs these tables:
+
+* clients
+* projects
+* vehicles
+* mileage
+* users
+
+Create them in MySQL with the following DDL.
 
 ```SQL
 CREATE TABLE `clients` (
@@ -25,6 +33,13 @@ CREATE TABLE `clients` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`client_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `vehicles` (
+  `vehicle_id` int(11) NOT NULL AUTO_INCREMENT,
+  `make_model` varchar(45) NOT NULL,
+  `registration` varchar(10) NOT NULL,
+  PRIMARY KEY (`vehicle_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `mileage` (
   `mileage_id` int(11) NOT NULL AUTO_INCREMENT,
