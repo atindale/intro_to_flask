@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  {% from 'project/_form.html' import project_form %}
+
+  {{ project_form(form_name = 'Add', project_code = '', project_name = '', client = '', project_status = '') }}
+      
+{% endblock %}

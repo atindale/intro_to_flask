@@ -2,18 +2,20 @@
 
 {% block content %}
 	<div class="page-header">
-		<h1>Vehicles</h1>
+		<h1>Mileage</h1>
+		<a href="{{ url_for('show_mileage',this_year=2012) }}">2012</a>
+		<a href="{{ url_for('show_mileage',this_year=2013) }}">2013</a>
+		<a href="{{ url_for('show_mileage',this_year=2014) }}">2014</a>
 	</div>
 
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Journey Date</th>
+				<th>Date</th>
 				<th>Vehicle</th>
-				<th>Start KM</th>
-				<th>End KM</th>
+				<th>Start</th>
+				<th>End</th>
 				<th>Journey</th>
-				<th>Client</th>
 				<th>Project</th>
 				<th>Purpose</th>
 			</tr>
@@ -26,8 +28,7 @@
 				<td>{{ miles.start_km }}</td>
 				<td>{{ miles.end_km }}</td>
 				<td>{{ miles.journey }}</td>
-				<td>{{ miles.client_id }}</td>
-				<td>{{ miles.project_id }}</td>
+				<td>{{ miles.project.project_code }}</td>
 				<td>{{ miles.purpose }}</td>
 				{#
 				<td>{{ comment.pub_date.strftime("%H:%M:%S %d/%m/%Y") }}</td>

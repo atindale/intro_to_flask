@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  {% from 'client/_form.html' import client_form %}
+
+  {{ client_form(form_name = 'Add', client_short_name = '', client_name = '') }}
+      
+{% endblock %}

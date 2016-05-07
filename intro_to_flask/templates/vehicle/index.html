@@ -3,6 +3,7 @@
 {% block content %}
 	<div class="page-header">
 		<h1>Vehicles</h1>
+		<a href="{{ url_for('vehicle_add') }}">Add new</a>
 	</div>
 
 	<table class="table">
@@ -10,6 +11,7 @@
 			<tr>
 				<th>Make and Model</th>
 				<th>Registration</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -17,6 +19,7 @@
 			<tr>
 				<td>{{ vehicle.make_model }}</td>
 				<td>{{ vehicle.registration }}</td>
+				<td><a href="{{ url_for('vehicle_update', id=vehicle.vehicle_id) }}">Edit</a> <a href="{{ url_for('vehicle_delete', id=vehicle.vehicle_id) }}">Delete</a></td>
 				{#
 				<td>{{ comment.pub_date.strftime("%H:%M:%S %d/%m/%Y") }}</td>
 				#}

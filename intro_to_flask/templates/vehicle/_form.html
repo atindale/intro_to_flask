@@ -1,0 +1,42 @@
+{% macro vehicle_form(form_name = '', make_model='', registration='', required='required') %}
+
+<div class="page-header">
+  <h1>{{ form_name }} Vehicle</h1>
+</div>
+  
+<fieldset>  
+<form class="form-horizontal" action="" method="POST"> 
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">Make and Model</label>
+    <div class="col-sm-8">
+      <input class="form-control" type="text" name="make_model" value="{{ make_model }}"  required/>
+    </div>
+    <div class="col-sm-2">
+      <small>required</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">Registration</label>
+    <div class="col-sm-8">
+      <input class="form-control" type="text" name="registration" value="{{ registration }}"  required/>
+    </div>
+    <div class="col-sm-2">
+      <small>required</small>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10 submit-row">
+      <button class="btn btn-primary" type="submit">{{ form_name }}</button>
+      <button class="btn btn-danger" type="submit">Cancel</button>
+    </div>
+  </div>
+</form>
+</fieldset>  
+</div>
+        
+{% endmacro %}

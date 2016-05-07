@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="page-header">
+    <h1>Clients</h1>
+    <a href="{{ url_for('client_add')}}">Add new</a>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Client Short Name</th>
+        <th>Client Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for client in clients %}
+      <tr>
+        <td>{{ client.client_short_name }}</td>
+        <td>{{ client.client_name }}</td>
+        <td><a href="{{ url_for('client_update', id=client.client_id) }}">Edit</a> <a href="{{ url_for('client_delete', id=client.client_id) }}">Delete</a></td>        
+        {#
+        <td>{{ comment.pub_date.strftime("%H:%M:%S %d/%m/%Y") }}</td>
+        #}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

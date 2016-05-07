@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  {% from 'vehicle/_form.html' import vehicle_form %}
+
+  {{ vehicle_form(form_name = 'Add', make_model = '', registration = '') }}
+      
+{% endblock %}
