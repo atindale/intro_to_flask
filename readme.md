@@ -2,7 +2,7 @@
 
 ## Overview
 
-This application started out from the Introduction to Flask tutorial on Tuts+. It has been developed further from trying out techiques and technologies. Eventually this will morph into a simple one-man-band projessional services business management application.
+This application started out from the Introduction to Flask tutorial on Tuts+. It has been developed further from trying out techiques and technologies. Eventually this will morph into a simple one-man-band professional services business management application.
 
 ## Grabbing this application
 
