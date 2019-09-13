@@ -16,57 +16,21 @@ $ git clone https://github.com/atindale/intro_to_flask.git
 
 This application currently needs these tables:
 
-* clients
-* projects
-* vehicles
+* client
+* project
+* project_statuss
+* vehicle
 * mileage
 * users
 
-Create them in MySQL with the following DDL.
+Create the tables with:
 
-```SQL
-CREATE TABLE `clients` (
-  `client_id` int(11) NOT NULL AUTO_INCREMENT,
-  `client_short_name` varchar(55) NOT NULL,
-  `client_name` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`client_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-
-CREATE TABLE `vehicles` (
-  `vehicle_id` int(11) NOT NULL AUTO_INCREMENT,
-  `make_model` varchar(45) NOT NULL,
-  `registration` varchar(10) NOT NULL,
-  PRIMARY KEY (`vehicle_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
-CREATE TABLE `mileage` (
-  `mileage_id` int(11) NOT NULL AUTO_INCREMENT,
-  `journey_date` date NOT NULL,
-  `vehicle_id` int(11) NOT NULL,
-  `start_km` int(11) DEFAULT NULL,
-  `end_km` int(11) DEFAULT NULL,
-  `journey` varchar(100) DEFAULT NULL,
-  `client_id` int(11) DEFAULT NULL,
-  `project_id` int(11) DEFAULT NULL,
-  `purpose` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`mileage_id`),
-  KEY `fk_mileage_vehicle1_idx` (`vehicle_id`),
-  KEY `fk_mileage_project1_idx` (`project_id`),
-  CONSTRAINT `fk_mileage_project1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`project_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_mileage_vehicle1` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicles` (`vehicle_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
-
-CREATE TABLE `users` (
-  `uid` int(11) NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(100) NOT NULL,
-  `lastname` varchar(100) NOT NULL,
-  `email` varchar(120) NOT NULL,
-  `pwdhash` varchar(100) NOT NULL,
-  PRIMARY KEY (`uid`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+```bash
+$ . venv/bin/activate
+$ export FLASK_APP=intro_to_flask.py
+$ flask shell
+>>> from app import db
+>>> db.create_all()
 ```
 
 Obviously create your own database and database user beforehand
@@ -87,9 +51,9 @@ Simply create a config.py file from config.py.example and update the parameters 
 You can run this application by:
 
 ```bash
-
-$ cd app
-$ python runserver.py
+$ . venv/bin/activate
+$ export FLASK_APP=intro_to_flask.py
+$ flask run
 ```
 
 ## What's to do next

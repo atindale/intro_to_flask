@@ -1,8 +1,8 @@
-from intro_to_flask import app
+from app import app
 from flask import render_template, request, flash, session, url_for, redirect, jsonify
-from forms import ContactForm, SignupForm, SigninForm, ProjectForm
-from flask.ext.mail import Message, Mail
-from models import db, User, Vehicle, Mileage, Project, Client
+from app.forms import ContactForm, SignupForm, SigninForm, ProjectForm
+from flask_mail import Message, Mail
+from app.models import db, User, Vehicle, Mileage, Project, Client
 from sqlalchemy import extract
 
 mail = Mail()
@@ -27,11 +27,11 @@ def flash_errors(form):
 	"""Flashes form errors"""
 	for field, errors in form.errors.items():
 		for error in errors:
-			print error
+			print(error)
 			if error == "This field is required.":
 				error_msg = "The %s field is required" % getattr(form, field).label.text
 				error_msg
-				print error
+				print(error)
 			else:
 				error_msg = error
 			flash(u"Error in the %s field - %s" % (
@@ -143,7 +143,7 @@ def project_update(id):
 	form = ProjectForm(obj=project)
 
 	if form.validate_on_submit():
-		print "in validate_on_submit"
+		print("in validate_on_submit")
 		project = Project(project_code=form.project_code.data, project_name=form.project_name.data, client=form.client_name.data, status=form.status.data)
 		db.session.commit()
 		flash('Your project has been added.')

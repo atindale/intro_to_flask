@@ -58,3 +58,6 @@ target/
 
 # Ignore any real config files
 config.py
+
+# Virtual environment directory
+venv/
