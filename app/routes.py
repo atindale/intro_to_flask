@@ -115,7 +115,10 @@ def project_add():
 	form = ProjectForm()
 
 	if form.validate_on_submit():
-		project = Project(project_code=form.project_code.data, project_name=form.project_name.data, client=form.client_name.data, status=form.status.data)
+		project = Project(project_code=form.project_code.data, 
+		                  project_name=form.project_name.data,
+						  client=form.client_name.data, 
+						  status=form.status.data)
 		db.session.add(project)
 		db.session.commit()
 		flash('Your project has been added.')
